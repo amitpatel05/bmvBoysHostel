@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+}
+
+textarea {
+  resize: none !important;
+}
+
+.container {
+  flex: 1;
+}
+
+/* NAVBAR */
+.nav {
+  max-height: auto !important;
+  width: 100%;
+  flex-direction: column !important;
+  background-color: aliceblue;
+}
+
+.logo {
+  height: 6rem;
+}
+
+.hostel-name {
+  margin-top: 0.4rem;
+  margin-right: 17rem;
+  line-height: 2rem;
+  display: block;
+  justify-content: center !important;
+  text-align: center;
+}
+
+.name {
+  font-size: xx-large;
+}
+
+.location,
+.approved {
+  line-height: 0.7rem;
+  font-size: large;
+}
+
+.nav-up {
+  width: 100% !important;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BOTTOM NAV */
+.nav-down {
+  width: 100%;
+  display: block;
+  margin-top: 0.4rem;
+  max-height: auto !important;
+}
+
+.nav-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  box-shadow: 1px 0 2px 0 rgb(0, 0, 0, 0.2);
+}
+
+.nav-options button {
+  width: 100%;
+  border: none;
+  color: rgb(0, 0, 0, 0.7);
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  background-color: aliceblue;
+  margin: 0.3rem 0.3rem;
+}
+
+.nav-options button:hover {
+  color: rgb(0, 0, 0, 1);
+}
+
+.nav-options select {
+  width: 100%;
+  border: none;
+  color: rgb(0, 0, 0, 0.7);
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  background-color: aliceblue;
+  text-align: center;
+  margin: 0.3rem 0.3rem;
+}
+
+.nav-options select:hover {
+  color: rgb(0, 0, 0, 0.7);
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  background-color: aliceblue;
+}
+
+.nav-select {
+  border: none !important;
+}
+
+/* FOOTER */
+.footer-main {
+  display: flex;
+  gap: 10rem;
+  height: 18rem;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(222, 239, 255);
+  font-size: 1.2rem;
+}
+
+.footer-main a {
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+.footer-main a:hover {
+  text-decoration: underline;
+  color: rgb(0, 0, 0, 1);
+}
+
+.foot {
+  display: inline-block;
+}
+
+/* Main Page */
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.main-page {
+  background-image: url("/assets/hostel-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 77.5vh;
+  width: 100%;
+}
+
+.up-index {
+  z-index: 10 !important;
+}
+.down-index {
+  z-index: 1 !important;
+}
+
+.login,
+.signup {
+  font-weight: 500;
+}
+
+.add-btn {
+  background-color: rgb(172, 216, 255) !important;
+}

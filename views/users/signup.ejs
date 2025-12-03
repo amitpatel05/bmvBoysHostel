@@ -1,0 +1,52 @@
+<div class="container mt-4 mb-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card shadow-lg border-0 rounded-4">
+        <h1 class="row justify-content-center mt-4 signup">Sign Up</h1>
+        <div class="card-body ps-3 pe-3 pb-4 ms-2">
+          <form
+            action="/signup"
+            method="POST"
+            class="needs-validation w-100 me-2"
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                name="username"
+                id="username"
+                type="text"
+                class="form-control"
+                required
+              />
+              <div class="valid-feedback">* Looks good!</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                name="email"
+                id="email"
+                type="email"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                name="password"
+                id="password"
+                type="password"
+                class="form-control"
+                required
+              />
+            </div>
+            <button class="btn add-btn mt-1">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
