@@ -136,6 +136,17 @@ textarea {
   justify-content: start;
 }
 
+.foot-btn {
+  border: none;
+  opacity: 0.7;
+  background-color: rgb(222, 239, 255);
+}
+
+.foot-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 /* SIGNUP, LOGIN, FEEDBACK PAGE */
 .login,
 .signup .feedback {

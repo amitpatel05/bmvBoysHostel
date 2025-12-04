@@ -20,20 +20,26 @@
 
   <div class="nav-down nav-options">
     <button onclick="location.href='/home'">Home</button>
-    <button>Admission</button>
-    <button>Facilities</button>
+    <button onclick="location.href='/admission'">Admission</button>
+    <button onclick="location.href='/facilities'">Facilities</button>
     <button onclick="location.href='/alumini'">Alumini</button>
-    <select name="eventGallery" id="eventGallery">
+    <select
+      name="eventGallery"
+      id="eventGallery"
+      onchange="window.location.href=this.value"
+    >
       <option>Events Gallery</option>
-      <option value="festivals">Festivals</option>
-      <option value="sports">Sports</option>
+      <option value="festivalsGallery">
+        <a href="/festivalsGallery">Festivals</a>
+      </option>
+      <option value="sportsGallery"><a href="/sportsGallery">Sports</a></option>
     </select>
     <select name="info" id="info" onchange="window.location.href=this.value">
       <option>Information</option>
-      <option value="fees">Fees Structure</option>
-      <option value="committee">Mess Committee</option>
-      <option value="rules">Rules & Regulations</option>
-      <option value="rules">Notice</option>
+      <option value="fees"><a href="/fees">Fees Structure</a></option>
+      <option value="committee"><a href="/committee">Mess Committee</a></option>
+      <option value="rules"><a href="/rules">Rules & Regulations</a></option>
+      <option value="home"><a href="/home">Notices</a></option>
     </select>
     <select
       class="nav-select"
@@ -44,8 +50,8 @@
       <option>Account</option>
       <option value="signup"><a href="/signup">Signup</a></option>
       <option value="login"><a href="/login">Login</a></option>
-      <option value="mngaccount">Manage Account</option>
-      <option value="logout"><a href="/home">Logout</a></option>
+      <option value="account"><a href="/account">Manage Account</a></option>
+      <option value="home"><a href="/home">Logout</a></option>
     </select>
   </div>
 </nav>
