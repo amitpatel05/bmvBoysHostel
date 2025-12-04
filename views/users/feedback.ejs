@@ -1,0 +1,30 @@
+<div class="container mt-4 mb-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card shadow-lg border-0 rounded-4">
+        <h1 class="row justify-content-center mt-4">Feedback</h1>
+        <div class="card-body ps-3 pe-3 pb-4 ms-2">
+          <form
+            action="/feedback"
+            method="POST"
+            class="needs-validation w-100 me-2"
+            novalidate
+          >
+            <div class="mb-3">
+              <textarea
+                name="feedback"
+                id="feedback"
+                rows="11"
+                class="form-control"
+                placeholder="Write your valuable feedback here..."
+                required
+              ></textarea>
+              <div class="valid-feedback">* Looks good!</div>
+            </div>
+            <button class="btn add-btn mt-1">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

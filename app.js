@@ -46,12 +46,72 @@ app.get("/home", (req, res) => {
   res.render("../views/pages/home.ejs");
 });
 
+app.get("/admission", (req, res) => {
+  res.render("../views/pages/admission.ejs");
+});
+
+app.get("/facilities", (req, res) => {
+  res.render("../views/pages/facilities.ejs");
+});
+
+app.get("/alumini", (req, res) => {
+  res.render("../views/pages/alumini.ejs");
+});
+
+app.get("/sportsGallery", (req, res) => {
+  res.render("../views/pages/sportsGallery.ejs");
+});
+
+app.get("/festivalsGallery", (req, res) => {
+  res.render("../views/pages/festivalsGallery.ejs");
+});
+
+app.get("/fees", (req, res) => {
+  res.render("../views/pages/fees.ejs");
+});
+
+app.get("/committee", (req, res) => {
+  res.render("../views/pages/committee.ejs");
+});
+
+app.get("/rules", (req, res) => {
+  res.render("../views/pages/rules.ejs");
+});
+
 app.get("/signup", (req, res) => {
   res.render("../views/users/signup.ejs");
 });
 
+app.post("/signup", (req, res) => {
+  const { username, email, password } = req.body;
+
+  if (!username || !email || !password) {
+    return res.status(400).send("All fields are required");
+  }
+
+  console.log("New user:", { username, email, password });
+
+  res.redirect("/home");
+});
+
 app.get("/login", (req, res) => {
   res.render("../views/users/login.ejs");
+});
+
+app.get("/account", (req, res) => {
+  res.render("../views/users/account.ejs");
+});
+
+app.get("/about", (req, res) => {
+  res.render("../views/pages/about.ejs");
+});
+
+app.get("/feedback", (req, res) => {
+  res.render("../views/users/feedback.ejs");
+});
+
+app.get("/privacy&terms", (req, res) => {
+  res.render("../views/pages/privacyterms.ejs");
 });
 
 const store = new MongoDBStore({
