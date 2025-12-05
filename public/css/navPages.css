@@ -1,0 +1,206 @@
+/* FACILITIES PAGE */
+.facilities-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.facilities-heading {
+  text-align: center;
+  color: #1f4e79;
+  padding: 1.5rem 0;
+}
+
+.facilities-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto 15px auto;
+}
+
+.facilities-card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px #d0d8e3;
+  border: 1px solid #aacdf3;
+  border-radius: 6px;
+  border-left: 5px solid #1f4e79 !important;
+}
+
+.facilities-card h2 {
+  color: #1f4e79;
+}
+
+/* SIGNUP, LOGIN, FEEDBACK PAGE */
+.login,
+.signup,
+.feedback {
+  font-weight: 500;
+}
+
+.password-eye {
+  position: absolute;
+  right: 12px;
+  top: 44px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.password-eye:hover {
+  opacity: 1;
+}
+
+.add-btn,
+.reset-btn {
+  background-color: #aacdf3 !important;
+}
+
+/* MESS COMMITTEE PAGE */
+.committee-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.committee-info {
+  text-align: center;
+  color: #1f4e79;
+  padding: 1.5rem 0;
+}
+
+.committee-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto 2rem auto;
+}
+
+.committee-card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1f4e79 !important;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #cfd8e5;
+  border: 1px solid #aacdf3;
+}
+
+.committee-card h2 {
+  color: #1f4e79;
+}
+
+.committee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.committee-table th,
+.committee-table td {
+  padding: 12px;
+  border: 1px solid #bcd0e7;
+  text-align: left;
+}
+
+.committee-table th {
+  background: #e7f1ff;
+  color: #1f4e79;
+  font-weight: bold;
+}
+
+.committee-table tr:nth-child(even) {
+  background: #f6f9ff;
+}
+
+/* RULES & REGULATIONS PAGE */
+.rules-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.rules-head {
+  text-align: center;
+  color: #1f4e79;
+  padding-top: 1.5rem;
+}
+
+.rules-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 30px auto;
+}
+
+.rules-card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1f4e79 !important;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #cfd8e5;
+  border: 1px solid #aacdf3;
+}
+
+.rules-card h2 {
+  color: #1f4e79;
+  padding: 0 0 0.5rem 0;
+}
+
+.rules-order {
+  text-align: end;
+  color: #1f4e79;
+}
+
+.rules-ul {
+  padding-left: 20px;
+}
+
+.rules-ul li {
+  margin-bottom: 10px;
+  line-height: 1.5em;
+}
+
+/* FEE STRUCTURE */
+.fees-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.fees-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.fees {
+  text-align: center;
+  color: #1f4e79;
+  padding-top: 1.5rem;
+}
+
+.fees-card {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1f4e79 !important;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #cfd8e5;
+  border: 1px solid #aacdf3;
+}
+
+.fees-card h2 {
+  color: #1f4e79;
+}
+
+.fees-ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.fees-note {
+  background: #fff7cc;
+  padding: 10px;
+  border-left: 4px solid #ffcc00;
+  margin-top: 15px;
+  border-radius: 4px;
+}

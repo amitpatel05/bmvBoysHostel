@@ -1,1 +1,35 @@
-<div><p>Festival gallery</p></div>
+<div class="gallery-body">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let student of allStudents) { %>
+    <div class="card col">
+      <img
+        src="<%= student.festivalsImage?.url || student.sportsImage?.url %>"
+        class="card-img-top"
+        alt="hostel_festivals_image"
+        style="height: 20rem"
+      />
+    </div>
+    <% } %>
+  </div>
+
+  <form
+    method="POST"
+    action="/festivalsImage"
+    novalidate
+    class="needs-validation w-25 ms-5 mt-5 mb-4"
+    enctype="multipart/form-data"
+  >
+    <div class="mb-3">
+      <label for="festivalsImage"><h5>Upload Image -</h5></label>
+      <input
+        name="student[festivalsImage]"
+        type="file"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <button class="btn add-btn">Add</button>
+    <button type="reset" class="btn reset-btn ms-3">Reset</button>
+  </form>
+</div>

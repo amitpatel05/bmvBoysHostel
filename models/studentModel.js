@@ -8,18 +8,18 @@ const studentSchema = new Schema({
     type: String,
     required: true,
   },
-
   email: {
     type: String,
     require: true,
     unique: true,
   },
-
   contact: {
     type: Number,
   },
-
-  image: {
+  festivalsImage: {
+    url: String,
+  },
+  sportsImage: {
     url: String,
   },
   password: {
@@ -38,5 +38,5 @@ studentSchema.pre("save", async function () {
 
 studentSchema.post("findOneAndDelete", async () => {});
 
-const student = mongoose.model("student", studentSchema);
-module.exports = student;
+module.exports =
+  mongoose.models.Student || mongoose.model("Student", studentSchema);
