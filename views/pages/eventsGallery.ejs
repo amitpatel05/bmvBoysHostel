@@ -1,0 +1,51 @@
+<div class="info-body mt-2 mb-2">
+  <% for(let image of allImages) { %>
+  <div class="image-container">
+    <img
+      src="<%= image.eventsImage.url %>"
+      onclick="showLarge('<%= image.eventsImage.url %>')"
+      alt="hostel_events_image"
+    />
+  </div>
+
+  <% } %> <% if (currUser && currUser.id.toString() ===
+  "6937481f7bc97c937f1157e0") { %>
+  <hr class="m-3" />
+  <div class="form-container m-3">
+    <h3 class="form-h1 file-header">Upload Image</h3>
+    <form
+      method="POST"
+      action="/eventsImage"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="form-group file-group">
+        <div class="mb-3">
+          <label for="eventsImage" class="form-label"></label>
+          <input name="eventsImage" type="file" class="form-input" required />
+        </div>
+
+        <button type="submit" class="form-button file-button">Add</button>
+        <button type="reset" class="form-button file-button">Reset</button>
+      </div>
+    </form>
+  </div>
+  <% } %>
+</div>
+
+<div class="modal fade" id="imageModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <img id="modalImage" class="img-fluid rounded" />
+    </div>
+  </div>
+</div>
+
+<script>
+  function showLarge(url) {
+    document.getElementById("modalImage").src = url;
+    let modal = new bootstrap.Modal(document.getElementById("imageModal"));
+    modal.show();
+  }
+</script>

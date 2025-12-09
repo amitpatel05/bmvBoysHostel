@@ -1,0 +1,163 @@
+<div class="form-body">
+  <div class="form-container mt-3 mb-3">
+    <h1 class="form-head">Hostel Registration</h1>
+
+    <form id="admissionForm" novalidate>
+      <div class="form-group">
+        <label for="fullName" class="form-label">Full Name *</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          required
+          placeholder="Enter your full name"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fatherName" class="form-label">Father Name *</label>
+        <input
+          type="text"
+          id="fatherName"
+          name="fatherName"
+          required
+          placeholder="Enter your father name"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="motherName" class="form-label">Mother Name *</label>
+        <input
+          type="text"
+          id="motherName"
+          name="motherName"
+          required
+          placeholder="Enter your mother name"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="your.email@example.com"
+            class="form-input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="+91 9876543210"
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dateOfBirth" class="form-label">Date of Birth *</label>
+          <input
+            type="date"
+            id="dateOfBirth"
+            name="dateOfBirth"
+            class="form-input"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="Categories" class="form-label">Categories *</label>
+          <select
+            id="Categories"
+            name="Categories"
+            class="form-select"
+            required
+          >
+            <option value="">Select your Categories</option>
+            <option value="OBC">OBC</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="course" class="form-label">Course/Program *</label>
+        <select id="course" name="course" class="form-select" required>
+          <option value="">Select your course</option>
+          <option value="B.Tech IT">B.Tech Information Technology</option>
+          <option value="B.Tech ECE">B.Tech Electronics & Communication</option>
+          <option value="B.Tech EE">B.Tech Electrical Engineering</option>
+          <option value="B.Tech CE">B.Tech Civil Engineering</option>
+          <option value="B.Tech ME">B.Tech Mechanical Engineering</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="year" class="form-label">Academic Year *</label>
+          <select id="year" name="year" class="form-select" required>
+            <option value="">Select year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year (Lateral)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Marks" class="form-label"
+            >Jee percentile/ 12th Board*</label
+          >
+          <input
+            type="number"
+            id="Marks"
+            name="Marks"
+            required
+            placeholder="Enter your percentile/ 12th"
+            class="form-input"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address" class="form-label">Permanent Address *</label>
+        <textarea
+          id="address"
+          name="address"
+          rows="3"
+          required
+          placeholder="Enter your complete address"
+          class="form-textarea"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="terms" class="checkbox-group form-label">
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            class="form-input"
+            required
+          />
+          <span>I agree to the hostel rules and regulations *</span>
+        </label>
+      </div>
+
+      <button type="submit" class="form-button">Submit Application</button>
+      <button type="reset" class="form-button">Reset</button>
+    </form>
+  </div>
+</div>

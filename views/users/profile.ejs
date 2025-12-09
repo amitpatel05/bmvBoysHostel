@@ -1,0 +1,198 @@
+<div class="form-body">
+  <div class="profile-card">
+    <div class="profile-edit-container">
+      <div class="profile-edit-header">
+        <div class="profile-avatar-section">
+          <div
+            class="profile-avatar"
+            onclick="document.getElementById('avatarInput').click()"
+          >
+            👨‍🎓
+            <div class="profile-avatar-upload" title="Change Photo">📷</div>
+          </div>
+          <div class="profile-text">
+            <h1><%= currUser.username %></h1>
+            <p>Update your personal information and photo</p>
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="edit-form"
+        id="profileForm"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName" class="form-label">Full Name *</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter Your Full Name"
+              class="form-input"
+              required
+              maxlength="50"
+            />
+            <div class="profile-error-message" id="nameError">
+              Name is required (max 50 characters)
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateOfBirth" class="form-label">Date of Birth *</label>
+            <input
+              type="date"
+              id="dateOfBirth"
+              name="dateOfBirth"
+              placeholder="Enter Your Date of Birth"
+              class="form-input"
+              required
+              max="2026-01-01"
+            />
+            <div class="profile-error-message" id="dobError">
+              DOB is required (must be 18+ years old)
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Your E-mail address"
+              class="form-input"
+              required
+            />
+            <div class="profile-error-message" id="emailError">
+              Please enter a valid email address
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Enter Your Phone Number"
+              class="form-input"
+              required
+            />
+            <div class="profile-error-message" id="phoneError">
+              Phone number must be 10 digits
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="emergencyContact" class="form-label"
+              >Parents Contact *</label
+            >
+            <input
+              type="tel"
+              id="emergencyContact"
+              name="emergencyContact"
+              placeholder="Enter Your Parents Phone Number"
+              class="form-input"
+              required
+            />
+            <div class="profile-error-message" id="emergencyError">
+              Please enter valid emergency contact
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bloodGroup" class="form-label">Blood Group *</label>
+            <select
+              id="bloodGroup"
+              name="bloodGroup"
+              class="form-select"
+              required
+            >
+              <option value="">Select Blood Group</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
+            <div class="profile-error-message" id="bloodError">
+              Please select your blood group
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address" class="form-label">Permanent Address *</label>
+          <textarea
+            id="address"
+            name="address"
+            required
+            placeholder="Enter complete address"
+            class="form-textarea"
+          ></textarea>
+          <div class="profile-error-message" id="addressError">
+            Address is required (min 20 characters)
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="course" class="form-label">Course *</label>
+            <select id="course" name="course" class="form-select" required>
+              <option value="">Select Course</option>
+              <option value="B.Tech IT">B.Tech Information Technology</option>
+              <option value="B.Tech EE">B.Tech Electrical Engineering</option>
+              <option value="B.Tech CE">B.Tech Civil Engineering</option>
+              <option value="B.Tech ECE">
+                B.Tech Electronics & Communication
+              </option>
+              <option value="B.Tech ME">B.Tech Mechanical Engineering</option>
+            </select>
+            <div class="profile-error-message" id="courseError">
+              Please select your course
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="year" class="form-label">Academic Year *</label>
+            <select id="year" name="year" class="form-select" required>
+              <option value="">Select Year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+            <div class="profile-error-message" id="yearError">
+              Please select your academic year
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="reset" class="profile-btn profile-btn-secondary">
+            Reset
+          </button>
+          <button
+            type="button"
+            class="profile-btn profile-btn-secondary"
+            onclick="window.history.back()"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="profile-btn profile-btn-primary">
+            Update Profile
+          </button>
+        </div>
+
+        <div id="successMessage" class="profile-success-message"></div>
+      </form>
+    </div>
+  </div>
+  <script link rel="script" src="/js/script.js"></script>
+</div>

@@ -1,0 +1,202 @@
+/* INFORMATION LAYOUT */
+.info-body {
+  font-family: Arial, sans-serif;
+  min-height: 79.75vh;
+  margin: 0;
+  padding: 0;
+}
+
+.info-head {
+  color: #1f4e79;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+
+.info-head-inner {
+  color: #1f4e79;
+  text-align: center;
+  border-left: 5px solid #aacdf3;
+  padding-left: 10px;
+  margin-bottom: 1.5rem !important;
+}
+
+.info-container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 0px opx;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+}
+
+.info-box {
+  width: 90%;
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 20px;
+  background: #ffffff;
+  border-left: 5px solid #1f4e79 !important;
+  border-radius: 6px;
+  border: 1px solid #aacdf3;
+  box-shadow: 0 0 10px #cfd8e5;
+}
+
+.info-box2 {
+  width: 100%;
+  background: white;
+  padding: 20px;
+  margin-bottom: 2rem;
+  border-left: 5px solid #1f4e79 !important;
+  border-radius: 6px;
+  border: 1px solid #aacdf3;
+  box-shadow: 0 0 10px #cfd8e5;
+}
+
+.info-box2-reverse {
+  flex-direction: row-reverse;
+  box-shadow: 0 0 10px #cfd8e5 !important;
+  border: 1px solid #aacdf3 !important;
+  border-right: 5px solid #1f4e79 !important;
+}
+
+.info-box h2,
+.info-box2 h2 {
+  color: #1b3c74;
+  border-left: 5px solid #aacdf3;
+  padding-left: 10px;
+}
+
+.info-box2 p {
+  margin: 0.7rem 0;
+}
+
+.info-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-note {
+  background: #fff7cc;
+  padding: 10px;
+  border-left: 4px solid #ffcc00;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.info-footer-note {
+  font-size: 0.9rem;
+  color: #1b3c74 !important;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.info-ul {
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.info-ul li {
+  margin-bottom: 10px;
+  line-height: 1.5em;
+}
+
+.info-order {
+  text-align: end;
+  color: #1f4e79;
+}
+
+/* ALUMNI PAGE */
+.alumni-box {
+  display: flex;
+  align-items: center;
+}
+
+.alumni-info {
+  padding: 20px;
+}
+
+.alumni-info p {
+  margin-bottom: 0.6rem;
+}
+
+/* EVENTS IMAGE PAGE */
+.image-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #d0d8e3;
+  border: 1px solid #aacdf3;
+}
+
+.image-container img {
+  width: 22.55rem;
+  height: 15rem;
+  border-radius: 20px;
+  image-rendering: auto;
+  object-fit: cover;
+}
+
+/* MESS COMMITTEE PAGE */
+.committee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.committee-table th,
+.committee-table td {
+  padding: 12px;
+  border: 1px solid #bcd0e7;
+  text-align: left;
+}
+
+.committee-table th {
+  background: #e7f1ff;
+  color: #1f4e79;
+  font-weight: bold;
+}
+
+.committee-table tr:nth-child(even) {
+  background: #f6f9ff;
+}
+
+/* ABOUT PAGE */
+.about-events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.about-event-card {
+  background: #e9f4ff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #cfe6fc;
+}
+
+.about-event-card h3 {
+  margin-top: 0;
+  color: #1a4979;
+}
+
+/* MAP PAGE */
+.map-body {
+  display: flex;
+  justify-content: center;
+}
+
+#map {
+  width: 75%;
+  height: 71.95vh;
+  border-radius: 0.5rem;
+  margin: 1.2rem 0;
+  border: 1px solid #aacdf3;
+  box-shadow: 0 0 10px #d0d8e3;
+}

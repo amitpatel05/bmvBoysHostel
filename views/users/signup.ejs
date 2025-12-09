@@ -1,0 +1,47 @@
+<div class="form-body p-0">
+  <div class="form-container mt-5 mb-5">
+    <h1 class="form-head">Sign Up</h1>
+
+    <form action="/signup" method="POST" novalidate>
+      <div class="form-group">
+        <label for="username" class="form-label">Username *</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          class="form-input"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email *</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          class="form-input"
+          required
+        />
+      </div>
+
+      <div class="position-relative form-group">
+        <label for="password" class="form-label">Password *</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          class="form-input"
+          required
+        />
+        <i class="fa-solid fa-eye password-eye mt-1" id="togglePassword"></i>
+      </div>
+
+      <button type="submit" class="form-button">Sign Up</button>
+      <button type="reset" class="form-button">Reset</button>
+    </form>
+  </div>
+</div>

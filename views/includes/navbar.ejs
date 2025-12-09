@@ -1,0 +1,124 @@
+<nav
+  class="navbar navbar-expand-lg border-bottom sticky-top nav display-flex p-0"
+>
+  <div class="nav-up">
+    <a onclick="location.href='/home'"
+      ><img class="ms-4 logo" src="/assets/logo.png" alt="logo"
+    /></a>
+    <div class="hostel-name">
+      <p class="name">
+        <b>Bharatratna Mokshagundam Visvesvaraya Boys Hostel, Sagar</b>
+      </p>
+      <p class="location">
+        Near Jabalpur Road, Makronia Station, Sagar, Madhya Pradesh- 470021
+      </p>
+      <p class="approved">
+        <b>(Declared By The Government of Madhya Pradesh)</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="nav-down nav-options">
+    <button onclick="location.href='/home'">Home</button>
+    <button onclick="location.href='/admission'">Admission</button>
+    <button onclick="location.href='/facilities'">Facilities</button>
+    <button onclick="location.href='/alumni'">Alumni</button>
+    <button onclick="location.href='/eventsGallery'">Events Gallery</button>
+
+    <button>
+      <li class="dropdown">
+        <a
+          class="nav-link dropdown-toggle p-0"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          &nbsp;&nbsp;Information
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-0">
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/home"
+              >Notices</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/fee"
+              >Fee Structure</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/committee"
+              >Mess Committee</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/rules"
+              >Rules & Regulations</a
+            >
+          </li>
+        </ul>
+      </li>
+    </button>
+
+    <% if (currUser) { %>
+    <button>
+      <li class="dropdown">
+        <a
+          class="nav-link dropdown-toggle p-0"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          &nbsp;&nbsp;<%= currUser.username %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-0">
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/profile"
+              >Profile</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a
+              class="dropdown-item text-danger drop-link pt-2 pb-2"
+              href="/home"
+            >
+              Logout&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </button>
+
+    <% } else { %>
+    <button class="nav-button">
+      <li class="dropdown">
+        <a
+          class="nav-link dropdown-toggle p-0"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          &nbsp;&nbsp;Account
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-0">
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/signup"
+              >Sign Up</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/login">
+              Login&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </button>
+    <% } %>
+  </div>
+</nav>

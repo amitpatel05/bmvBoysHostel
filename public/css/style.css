@@ -1,0 +1,214 @@
+/* Hide ScrollBar */
+* {
+  padding: 0;
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  min-height: 100vh;
+}
+
+textarea {
+  resize: none !important;
+}
+
+.container {
+  flex: 1;
+}
+
+/* NAVBAR */
+.nav {
+  max-height: auto !important;
+  width: 100%;
+  flex-direction: column !important;
+  background-color: aliceblue;
+}
+
+.logo {
+  height: 6rem;
+}
+
+.hostel-name {
+  margin-top: 0.4rem;
+  margin-right: 19rem;
+  line-height: 2rem;
+  display: block;
+  justify-content: center !important;
+  text-align: center;
+}
+
+.name {
+  font-size: xx-large;
+}
+
+.location,
+.approved {
+  line-height: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.nav-up {
+  width: 100% !important;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: auto !important;
+  margin: 0.5rem 0;
+}
+
+.nav-down {
+  width: 100%;
+  max-height: auto !important;
+  font-size: 1.2rem;
+}
+
+.nav-options {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  justify-content: space-evenly;
+  box-shadow: 1px 0 2px 0 rgb(0, 0, 0, 0.2);
+}
+
+.nav-options button {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  color: rgb(0, 0, 0, 0.7);
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  background-color: aliceblue;
+}
+
+.nav-options button a {
+  color: rgb(0, 0, 0, 0.7) !important;
+}
+
+.nav-options button:hover {
+  color: rgb(0, 0, 0, 1);
+  background-color: rgb(203, 219, 234);
+}
+
+.nav-button {
+  border: none !important;
+}
+
+.drop-link {
+  font-size: 1.15rem !important;
+}
+
+/* FOOTER */
+.footer-main {
+  height: 21rem;
+  background-color: aliceblue;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0, 0.7);
+  border-top: 1px solid rgb(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.foot-inside {
+  gap: 10rem;
+  height: 16.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.footer-main a {
+  text-decoration: none;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+.footer-main a:hover {
+  text-decoration: underline;
+  color: rgb(0, 0, 0, 1);
+}
+
+.foot {
+  display: inline-block;
+  justify-content: start;
+}
+
+.foot-btn {
+  border: none;
+  opacity: 0.7;
+  background-color: aliceblue;
+}
+
+.foot-btn:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Main Page */
+.main-page-image {
+  width: 100%;
+  height: 79.75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bgChange linear 15s infinite normal;
+}
+
+@keyframes bgChange {
+  0% {
+    background-image: url("/assets/hostel-img-1.jpg");
+  }
+  16.6% {
+    background-image: url("/assets/hostel-img-2.jpg");
+  }
+  33.4% {
+    background-image: url("/assets/hostel-img-3.jpg");
+  }
+  50.1% {
+    background-image: url("/assets/hostel-img-4.jpg");
+  }
+  66.8% {
+    background-image: url("/assets/hostel-img-5.jpg");
+  }
+  83.4% {
+    background-image: url("/assets/hostel-img-6.jpg");
+  }
+  100% {
+    background-image: url("/assets/hostel-img-1.jpg");
+  }
+}
+
+/* NOTICE CARD */
+.card {
+  width: 40% !important;
+  margin-left: 31.675rem;
+  opacity: 0.93;
+}
+
+.card-body {
+  padding: 0.5rem !important;
+}
+
+.card-header {
+  text-align: center;
+  background-color: #aacdf3 !important;
+}
+
+.card-header h5 {
+  font-weight: 600 !important;
+  opacity: 0.9;
+}
+
+.list-group-item {
+  padding: 0.4rem 1rem !important;
+}
+
+.list-group-item button {
+  border: none !important;
+  background-color: white !important;
+}
