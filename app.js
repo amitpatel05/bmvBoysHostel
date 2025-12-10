@@ -51,7 +51,7 @@ app.use(
     secret: "mysupersecret",
     resave: false,
     saveUninitialized: false,
-    store: store,
+    // store: store,
     cookie: {
       expires: Date.now() + 1000 * 60 * 60 * 24 * 3,
       maxAge: 1000 * 60 * 60 * 24 * 3,
@@ -167,15 +167,18 @@ app.post("/login", async (req, res) => {
 
 // Logout
 app.post("/logout", (req, res) => {
-  req.session.destroy();
-  //   req.session.destroy((err) => {
-  //     if (err) {
-  //       return res.redirect("/home");
-  //     }
-  //     res.clearCookie("connect.sid");
-  //     res.redirect("/login");
-  //   });
-  res.redirect("/login");
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+      return res.redirect("/home");
+    }
+    res.clearCookie("connect.sid", {
+      path: "/",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+    });
+    res.redirect("/login");
+  });
 });
 
 // Profile Route

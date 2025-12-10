@@ -112,9 +112,19 @@
           </li>
           <li><hr class="dropdown-divider m-0" /></li>
           <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/login">
-              Login&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <a
+              href="#"
+              class="dropdown-item text-danger drop-link pt-2 pb-2"
+              onclick="document.getElementById('logoutForm').submit(); return false;"
+            >
+              Logout&nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
+            <form
+              id="logoutForm"
+              action="/logout"
+              method="POST"
+              style="display: none"
+            ></form>
           </li>
         </ul>
       </li>
