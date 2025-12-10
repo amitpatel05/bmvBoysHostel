@@ -244,6 +244,13 @@ app.post("/eventsImage", upload.single("eventsImage"), async (req, res) => {
   }
 });
 
+// Home Page
+app.get("/home", (req, res) => {
+  res.render("pages/index.ejs", {
+    user: req.session.user,
+  });
+});
+
 // Admission Route
 app.get("/admission", (req, res) => {
   res.render("users/admission.ejs");
