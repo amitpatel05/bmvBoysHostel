@@ -2,7 +2,7 @@ const User = require("../models/user");
 const { createSecretToken } = require("../utils/SecretToken");
 const bcrypt = require("bcryptjs");
 
-module.exports.Signup = async (req, res, next) => {
+module.exports.Signup = async (req, res) => {
   try {
     const { email, password, username, createdAt } = req.body;
     const existingUser = await User.findOne({ email });
@@ -32,14 +32,12 @@ module.exports.Signup = async (req, res, next) => {
       success: true,
       user,
     });
-
-    next();
   } catch (error) {
     console.error(error);
   }
 };
 
-module.exports.Login = async (req, res, next) => {
+module.exports.Login = async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -63,6 +61,7 @@ module.exports.Login = async (req, res, next) => {
       .json({ message: "User logged in successfully", success: true });
     next();
   } catch (error) {
-    console.error(error);
+    console.log(error);
+    return res.status(500).json({ message: "Server Error" });
   }
 };
