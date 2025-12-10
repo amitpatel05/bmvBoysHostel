@@ -73,6 +73,11 @@ app.use((req, res, next) => {
 
 // ------------------ ROUTES ------------------ //
 
+// Root
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
+
 // Landing Page
 app.get("/home", (req, res) => {
   res.render("pages/index.ejs", {
@@ -242,13 +247,6 @@ app.post("/eventsImage", upload.single("eventsImage"), async (req, res) => {
   } catch (err) {
     res.send("Image upload failed");
   }
-});
-
-// Home Page
-app.get("/home", (req, res) => {
-  res.render("pages/index.ejs", {
-    user: req.session.user,
-  });
 });
 
 // Admission Route
