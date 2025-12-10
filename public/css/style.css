@@ -91,6 +91,18 @@ textarea {
   color: rgb(0, 0, 0, 0.7) !important;
 }
 
+.nav-options button a:hover {
+  color: rgb(0, 0, 0, 1) !important;
+}
+
+.nav-options button .text-danger {
+  color: rgb(220, 53, 69, 0.8) !important;
+}
+
+.nav-options button .text-danger:hover {
+  color: rgb(220, 53, 69, 1) !important;
+}
+
 .nav-options button:hover {
   color: rgb(0, 0, 0, 1);
   background-color: rgb(203, 219, 234);
@@ -102,6 +114,10 @@ textarea {
 
 .drop-link {
   font-size: 1.15rem !important;
+}
+
+.drop-link:hover {
+  border-radius: 0.35rem !important;
 }
 
 /* FOOTER */
