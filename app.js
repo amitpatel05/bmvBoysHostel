@@ -56,7 +56,7 @@ app.use(
       maxAge: 1000 * 60 * 60 * 24 * 3,
       httpOnly: true,
     },
-  })
+  }),
 );
 
 mongoose
@@ -210,7 +210,7 @@ app.post("/profile", async (req, res) => {
         ...req.body,
         userId,
       },
-      { upsert: true, new: true }
+      { upsert: true, new: true },
     );
 
     req.session.user = {
@@ -251,6 +251,11 @@ app.post("/eventsImage", upload.single("eventsImage"), async (req, res) => {
 // Admission Route
 app.get("/admission", (req, res) => {
   res.render("users/admission.ejs");
+});
+
+// NewAdmission Route
+app.get("/newAdmission", (req, res) => {
+  res.render("pages/newAdmission.ejs");
 });
 
 // Feedback Route

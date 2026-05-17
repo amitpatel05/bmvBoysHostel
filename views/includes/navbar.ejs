@@ -20,8 +20,36 @@
 
   <div class="nav-down nav-options">
     <button onclick="location.href='/home'">Home</button>
-    <button onclick="location.href='/admission'">Admission</button>
-    <button onclick="location.href='/facilities'">Facilities</button>
+    <% if (currUser) { %>
+      <button onclick="location.href='/newAdmission'">Admission</button>
+      <% } else { %>
+        <button onclick="location.href='/admission'">Registration</button>
+      <% } %>
+    <button>
+      <li class="dropdown">
+        <a
+          class="nav-link dropdown-toggle p-0"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          &nbsp;&nbsp;Facilities
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-0">
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="/facilities"
+              >Details</a
+            >
+          </li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li>
+            <a class="dropdown-item drop-link pt-2 pb-2" href="https://videocall-a9i6.onrender.com"
+              >Video Meetings</a
+            >
+          </li>
+          </ul>
+      </li>
+    </button>
     <button onclick="location.href='/alumni'">Alumni</button>
     <button onclick="location.href='/eventsGallery'">Events Gallery</button>
 

@@ -1,0 +1,923 @@
+<!-- STEP BAR -->
+<div class="steps-bar">
+  <div class="steps-inner">
+    <div class="step-item active" id="step1">
+      <div class="step-num">1</div>
+      <span>Personal Details</span>
+    </div>
+    <div class="step-item" id="step2">
+      <div class="step-num">2</div>
+      <span>Academic Info</span>
+    </div>
+    <div class="step-item" id="step3">
+      <div class="step-num">3</div>
+      <span>Contact & ID</span>
+    </div>
+    <div class="step-item" id="step4">
+      <div class="step-num">4</div>
+      <span>Payment</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- FORM AREA -->
+  <div class="form-card info-box">
+    <!-- SUCCESS SCREEN -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-anim">
+        <svg viewBox="0 0 36 36"><polyline points="5 18 12 25 31 8" /></svg>
+      </div>
+      <div class="success-title">Admission Confirmed!</div>
+      <div class="success-sub">
+        Your hostel admission has been successfully submitted. A confirmation
+        will be sent to your registered contact.
+      </div>
+      <div class="receipt-box" id="receiptBox"></div>
+      <button
+        class="btn btn-outline"
+        style="margin-top: 20px"
+        onclick="resetForm()"
+      >
+        ← Start New Application
+      </button>
+    </div>
+
+    <!-- SECTION 1: Personal Details -->
+    <div class="section active" id="sec1">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </div>
+        <div>
+          <div class="section-title">Personal Details</div>
+          <div class="section-desc">Fill in your personal information</div>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="photo-row">
+          <div>
+            <label style="display: block; margin-bottom: 6px"
+              >Photo <span style="color: var(--req, #dc2626)">*</span></label
+            >
+            <div
+              class="photo-upload"
+              id="photoUpload"
+              onclick="document.getElementById('photoFile').click()"
+            >
+              <img id="photoPreview" alt="" />
+              <div class="photo-upload-icon" id="photoIcon">📷</div>
+              <span id="photoText">Upload Photo</span>
+            </div>
+            <input
+              type="file"
+              id="photoFile"
+              accept="image/*"
+              style="display: none"
+              onchange="previewPhoto(this)"
+            />
+          </div>
+          <div class="photo-fields">
+            <div class="field">
+              <label>First Name <span class="req">*</span></label>
+              <input type="text" id="firstName" placeholder="Rahul" />
+              <div class="field-error" id="err-firstName">Required</div>
+            </div>
+            <div class="field">
+              <label>Last Name <span class="req">*</span></label>
+              <input type="text" id="lastName" placeholder="Sharma" />
+              <div class="field-error" id="err-lastName">Required</div>
+            </div>
+            <div class="field">
+              <label>Date of Birth <span class="req">*</span></label>
+              <input type="date" id="dob" />
+              <div class="field-error" id="err-dob">Required</div>
+            </div>
+            <div class="field">
+              <label>Gender <span class="req">*</span></label>
+              <select id="gender">
+                <option value="">Select</option>
+                <option>Male</option>
+              </select>
+              <div class="field-error" id="err-gender">Required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top: 20px">
+          <div class="field">
+            <label>Religion</label>
+            <select id="religion">
+              <option value="">Select</option>
+              <option>Hindu</option>
+              <option>Muslim</option>
+              <option>Christian</option>
+              <option>Sikh</option>
+              <option>Jain</option>
+              <option>Buddhist</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Category <span class="req">*</span></label>
+            <select id="category">
+              <option value="">Select Category</option>
+              <option>General</option>
+              <option>OBC</option>
+              <option>SC</option>
+              <option>ST</option>
+              <option>EWS</option>
+            </select>
+            <div class="field-error" id="err-category">Required</div>
+          </div>
+          <div class="field span-2">
+            <label>Permanent Address <span class="req">*</span></label>
+            <input
+              type="text"
+              id="address"
+              placeholder="House No, Street, Village/Town, District"
+            />
+            <div class="field-error" id="err-address">Required</div>
+          </div>
+          <div class="field">
+            <label>District</label>
+            <input type="text" id="district" placeholder="Sagar" />
+          </div>
+          <div class="field">
+            <label>State</label>
+            <select id="state">
+              <option value="">Select State</option>
+              <option selected>Madhya Pradesh</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <span style="font-size: 12px; color: var(--gray-400)">Step 1 of 4</span>
+        <button class="btn btn-primary" onclick="goNext(1)">
+          Next: Academic Info →
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Academic Info -->
+    <div class="section" id="sec2">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M2 10l10-6 10 6-10 6-10-6z" />
+            <path d="M6 12v5c3.33 1.67 8.67 1.67 12 0v-5" />
+          </svg>
+        </div>
+        <div>
+          <div class="section-title">Academic Information</div>
+          <div class="section-desc">Course, year, and institution details</div>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="form-grid">
+          <div class="field">
+            <label>Institution Name <span class="req">*</span></label>
+            <input
+              type="text"
+              id="college"
+              placeholder="e.g. Govt. Science College, Sagar"
+            />
+            <div class="field-error" id="err-college">Required</div>
+          </div>
+          <div class="field">
+            <label>Course / Program <span class="req">*</span></label>
+            <select id="course" onchange="updateFee()">
+              <option value="">Select Course</option>
+              <optgroup label="Engineering">
+                <option>B.E. / B.Tech</option>
+              </optgroup>
+            </select>
+            <div class="field-error" id="err-course">Required</div>
+          </div>
+          <div class="field">
+            <label>Year of Study <span class="req">*</span></label>
+            <select id="yearStudy" onchange="updateFee()">
+              <option value="">Select Year</option>
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year</option>
+            </select>
+            <div class="field-error" id="err-yearStudy">Required</div>
+          </div>
+          <div class="field">
+            <label>Enrollment / Roll No.</label>
+            <input type="text" id="rollNo" placeholder="e.g. 2023BTCS001" />
+          </div>
+          <div class="field">
+            <label>Academic Session <span class="req">*</span></label>
+            <select id="session">
+              <option value="">Select Session</option>
+              <option>2024–25</option>
+              <option selected>2025–26</option>
+              <option>2026–27</option>
+            </select>
+            <div class="field-error" id="err-session">Required</div>
+          </div>
+          <div class="field">
+            <label>Previous Year % / CGPA</label>
+            <input
+              type="text"
+              id="marks"
+              placeholder="e.g. 78.5% or 8.2 CGPA"
+            />
+          </div>
+          <div class="field span-2">
+            <label>Room Preference</label>
+            <select id="roomPref">
+              <option value="">No Preference</option>
+              <option>Single Occupancy</option>
+              <option>Double Occupancy</option>
+              <option>Triple Occupancy</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fee highlight -->
+        <div
+          id="feeHighlight"
+          style="
+            display: none;
+            margin-top: 16px;
+            padding: 14px 18px;
+            background: linear-gradient(
+              90deg,
+              rgba(21, 101, 192, 0.08),
+              rgba(21, 101, 192, 0.03)
+            );
+            border-left: 3px solid var(--blue);
+            border-radius: 0 var(--radius) var(--radius) 0;
+          "
+        >
+          <div
+            style="
+              font-size: 11px;
+              color: var(--gray-400);
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            "
+          >
+            Applicable Fee
+          </div>
+          <div
+            style="
+              font-size: 1.4rem;
+              font-weight: 700;
+              color: var(--blue);
+              font-family: &quot;Playfair Display&quot;, serif;
+            "
+            id="feeDisplay"
+          >
+            —
+          </div>
+          <div
+            style="font-size: 11px; color: var(--gray-400); margin-top: 2px"
+            id="feeNote"
+          ></div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn btn-outline" onclick="goBack(2)">← Back</button>
+        <button class="btn btn-primary" onclick="goNext(2)">
+          Next: Contact & ID →
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Contact & Aadhaar -->
+    <div class="section" id="sec3">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div class="section-title">Contact & Identity Information</div>
+          <div class="section-desc">
+            Mobile, email, guardian details, and Aadhaar
+          </div>
+        </div>
+      </div>
+      <div class="section-body">
+        <div
+          style="
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin-bottom: 12px;
+          "
+        >
+          Student Contact
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Mobile Number <span class="req">*</span></label>
+            <input
+              type="tel"
+              id="mobile"
+              placeholder="10-digit mobile"
+              maxlength="10"
+              oninput="this.value = this.value.replace(/\D/g, '')"
+            />
+            <div class="field-error" id="err-mobile">
+              Enter valid 10-digit mobile
+            </div>
+          </div>
+          <div class="field">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="student@email.com" />
+          </div>
+        </div>
+
+        <div
+          style="
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin: 20px 0 12px;
+          "
+        >
+          Guardian Information
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Father's / Guardian's Name <span class="req">*</span></label>
+            <input type="text" id="guardianName" placeholder="Full name" />
+            <div class="field-error" id="err-guardianName">Required</div>
+          </div>
+          <div class="field">
+            <label>Relation</label>
+            <select id="relation">
+              <option value="">Select</option>
+              <option selected>Father</option>
+              <option>Mother</option>
+              <option>Guardian</option>
+              <option>Uncle</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Guardian's Mobile <span class="req">*</span></label>
+            <input
+              type="tel"
+              id="guardianMobile"
+              placeholder="10-digit mobile"
+              maxlength="10"
+              oninput="this.value = this.value.replace(/\D/g, '')"
+            />
+            <div class="field-error" id="err-guardianMobile">
+              Enter valid 10-digit mobile
+            </div>
+          </div>
+          <div class="field">
+            <label>Guardian's Occupation</label>
+            <input
+              type="text"
+              id="guardianOcc"
+              placeholder="e.g. Farmer, Government Employee"
+            />
+          </div>
+        </div>
+
+        <div
+          style="
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin: 20px 0 12px;
+          "
+        >
+          Aadhaar Information
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Aadhaar Number <span class="req">*</span></label>
+            <input
+              type="text"
+              id="aadhar"
+              placeholder="XXXX XXXX XXXX"
+              maxlength="14"
+              oninput="formatAadhar(this)"
+              autocomplete="off"
+            />
+            <div class="field-error" id="err-aadhar">
+              Enter valid 12-digit Aadhaar number
+            </div>
+          </div>
+          <div class="field">
+            <label>Name as on Aadhaar <span class="req">*</span></label>
+            <input
+              type="text"
+              id="aadharName"
+              placeholder="Full name as on Aadhaar"
+              oninput="updateAadharPreview()"
+            />
+            <div class="field-error" id="err-aadharName">Required</div>
+          </div>
+          <div class="field span-2">
+            <div class="aadhar-preview" id="aadharPreview">
+              <div class="ap-label">आधार / Aadhaar</div>
+              <div class="ap-num" id="apNum">XXXX XXXX XXXX</div>
+              <div class="ap-name" id="apName">Name: —</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid" style="margin-top: 16px">
+          <div class="field">
+            <label>Emergency Contact Name</label>
+            <input type="text" id="emergName" placeholder="Name" />
+          </div>
+          <div class="field">
+            <label>Emergency Contact Number</label>
+            <input
+              type="tel"
+              id="emergMobile"
+              placeholder="10-digit"
+              maxlength="10"
+              oninput="this.value = this.value.replace(/\D/g, '')"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-nav">
+        <button class="btn btn-outline" onclick="goBack(3)">← Back</button>
+        <button class="btn btn-primary" onclick="goNext(3)">
+          Next: Payment →
+        </button>
+      </div>
+    </div>
+
+    <!-- SECTION 4: Payment -->
+    <div class="section" id="sec4">
+      <div class="section-header">
+        <div class="section-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="1" y="4" width="22" height="16" rx="2" />
+            <line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+        </div>
+        <div>
+          <div class="section-title">Fee Payment</div>
+          <div class="section-desc">Complete your hostel admission payment</div>
+        </div>
+      </div>
+      <div class="section-body">
+        <!-- Amount Banner -->
+        <div
+          style="
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              position: absolute;
+              right: -10px;
+              top: -10px;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              background: rgba(255, 255, 255, 0.04);
+            "
+          ></div>
+          <div>
+            <div
+              style="
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.5);
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              "
+            >
+              Amount Due
+            </div>
+            <div
+              style="
+                font-size: 1.8rem;
+                font-weight: 700;
+                color: #fff;
+                font-family: &quot;Playfair Display&quot;, serif;
+              "
+              id="payAmount"
+            >
+              ₹ —
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 2px;
+              "
+              id="payYear"
+            >
+              Select year to see fee
+            </div>
+          </div>
+          <div style="text-align: right">
+            <div style="font-size: 11px; color: rgba(255, 255, 255, 0.5)">
+              Session
+            </div>
+            <div
+              style="
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: 500;
+              "
+              id="paySess"
+            >
+              2025–26
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: rgba(201, 168, 76, 0.8);
+                margin-top: 4px;
+              "
+              id="payApplicant"
+            >
+              —
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-400);
+            margin-bottom: 12px;
+          "
+        >
+          Choose Payment Method
+        </div>
+        <div class="payment-methods">
+          <div class="pm-btn active" onclick="setPM('upi', this)">
+            <div class="pm-icon">📱</div>
+            <div class="pm-label">UPI</div>
+          </div>
+          <div class="pm-btn" onclick="setPM('card', this)">
+            <div class="pm-icon">💳</div>
+            <div class="pm-label">Card</div>
+          </div>
+          <div class="pm-btn" onclick="setPM('netbanking', this)">
+            <div class="pm-icon">🏦</div>
+            <div class="pm-label">Net Banking</div>
+          </div>
+          <div class="pm-btn" onclick="setPM('challan', this)">
+            <div class="pm-icon">🧾</div>
+            <div class="pm-label">Challan</div>
+          </div>
+        </div>
+
+        <!-- UPI -->
+        <div class="pay-form active" id="pf-upi">
+          <div class="upi-options">
+            <div class="upi-opt active" onclick="selectUpi(this, 'GPay')">
+              <div class="upi-icon">🟢</div>
+              <div class="uo-name">GPay</div>
+            </div>
+            <div class="upi-opt" onclick="selectUpi(this, 'PhonePe')">
+              <div class="upi-icon">🟣</div>
+              <div class="uo-name">PhonePe</div>
+            </div>
+            <div class="upi-opt" onclick="selectUpi(this, 'Paytm')">
+              <div class="upi-icon">🔵</div>
+              <div class="uo-name">Paytm</div>
+            </div>
+            <div class="upi-opt" onclick="selectUpi(this, 'Other')">
+              <div class="upi-icon">🔶</div>
+              <div class="uo-name">Other</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>UPI ID <span class="req">*</span></label>
+            <input type="text" id="upiId" placeholder="yourname@upi" />
+            <div class="field-error" id="err-upiId">Enter valid UPI ID</div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="pay-form" id="pf-card">
+          <div class="form-grid cols-1">
+            <div class="field">
+              <label>Cardholder Name <span class="req">*</span></label>
+              <input type="text" id="cardName" placeholder="Name on card" />
+              <div class="field-error" id="err-cardName">Required</div>
+            </div>
+            <div class="field">
+              <label>Card Number <span class="req">*</span></label>
+              <div class="card-input-wrap">
+                <input
+                  type="text"
+                  id="cardNum"
+                  placeholder="XXXX XXXX XXXX XXXX"
+                  maxlength="19"
+                  oninput="formatCard(this)"
+                />
+                <span class="card-type-icon" id="cardTypeIcon">💳</span>
+              </div>
+              <div class="field-error" id="err-cardNum">
+                Enter valid card number
+              </div>
+            </div>
+          </div>
+          <div class="form-grid" style="margin-top: 12px">
+            <div class="field">
+              <label>Expiry (MM/YY) <span class="req">*</span></label>
+              <input
+                type="text"
+                id="cardExp"
+                placeholder="MM/YY"
+                maxlength="5"
+                oninput="formatExpiry(this)"
+              />
+              <div class="field-error" id="err-cardExp">Required</div>
+            </div>
+            <div class="field">
+              <label>CVV <span class="req">*</span></label>
+              <input
+                type="password"
+                id="cardCvv"
+                placeholder="•••"
+                maxlength="4"
+              />
+              <div class="field-error" id="err-cardCvv">Required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Net Banking -->
+        <div class="pay-form" id="pf-netbanking">
+          <div class="field">
+            <label>Select Bank <span class="req">*</span></label>
+            <select id="bankSelect">
+              <option value="">Choose your bank</option>
+              <option>State Bank of India (SBI)</option>
+              <option>Bank of Baroda</option>
+              <option>Punjab National Bank</option>
+              <option>Central Bank of India</option>
+              <option>HDFC Bank</option>
+              <option>ICICI Bank</option>
+              <option>Axis Bank</option>
+              <option>Other Bank</option>
+            </select>
+            <div class="field-error" id="err-bankSelect">Select a bank</div>
+          </div>
+          <div
+            style="
+              margin-top: 12px;
+              padding: 12px;
+              background: #fffbeb;
+              border: 1px solid #fde68a;
+              border-radius: var(--radius);
+              font-size: 0.8rem;
+              color: #92400e;
+            "
+          >
+            ⚠️ You will be redirected to your bank's secure payment gateway to
+            complete the transaction.
+          </div>
+        </div>
+
+        <!-- Challan -->
+        <div class="pay-form" id="pf-challan">
+          <div
+            style="
+              padding: 16px;
+              background: #f0fdf4;
+              border: 1px solid #bbf7d0;
+              border-radius: var(--radius);
+            "
+          >
+            <div style="font-weight: 600; color: #166534; margin-bottom: 6px">
+              📄 Bank Challan Payment
+            </div>
+            <div style="font-size: 0.83rem; color: #166534; line-height: 1.6">
+              Download and fill the challan form. Deposit the fee at any branch
+              of <strong>State Bank of India</strong> or
+              <strong>Central Bank of India</strong> in favour of
+              <em>"BMV Boys Hostel, Sagar"</em>.<br /><br />
+              Account No: <strong>31234567890</strong> &nbsp;|&nbsp; IFSC:
+              <strong>SBIN0004321</strong><br />
+              Submit the paid challan receipt at the hostel office within 3
+              working days.
+            </div>
+            <button
+              class="btn btn-outline"
+              style="margin-top: 12px; font-size: 0.8rem"
+            >
+              ⬇ Download Challan Form
+            </button>
+          </div>
+          <div class="field" style="margin-top: 16px">
+            <label>Challan / Transaction Reference No.</label>
+            <input
+              type="text"
+              id="challanRef"
+              placeholder="Enter reference number after deposit"
+            />
+          </div>
+        </div>
+
+        <div
+          style="
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.82rem;
+            color: var(--gray-600);
+          "
+        >
+          <input
+            type="checkbox"
+            id="termsCheck"
+            style="width: auto; margin-top: 2px"
+          />
+          <label
+            for="termsCheck"
+            style="
+              text-transform: none;
+              letter-spacing: 0;
+              font-size: 0.82rem;
+              color: var(--gray-600);
+              cursor: pointer;
+              font-weight: 400;
+            "
+          >
+            I confirm that all information provided is accurate and I agree to
+            the hostel rules, regulations, and fee policies of BMV Boys Hostel.
+          </label>
+        </div>
+        <div class="field-error" id="err-terms" style="margin-top: 4px">
+          Please accept the terms to proceed
+        </div>
+      </div>
+
+      <div class="form-nav">
+        <button class="btn btn-outline" onclick="goBack(4)">← Back</button>
+        <button class="btn btn-gold" onclick="submitForm()">
+          ✓ Confirm & Pay
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- /form-card -->
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <!-- Fee Structure -->
+    <div class="fee-card info-box">
+      <div class="fee-card-head">
+        <h3>Hostel Fee Structure</h3>
+        <p>Academic Session 2025–26</p>
+      </div>
+      <div class="fee-rows">
+        <div class="fee-row" id="feeRow1">
+          <div>
+            <div class="fee-year">1st Year Students</div>
+            <div class="fee-sub">New Admission</div>
+            <div class="fee-badge">First Year Rate</div>
+          </div>
+          <div style="text-align: right">
+            <div class="fee-amount">₹6,500</div>
+            <div style="font-size: 10px; color: var(--gray-400)">per year</div>
+          </div>
+        </div>
+        <div class="fee-row" id="feeRow2">
+          <div>
+            <div class="fee-year">2nd Year Students</div>
+            <div class="fee-sub">Continuing</div>
+          </div>
+          <div style="text-align: right">
+            <div class="fee-amount">₹5,000</div>
+            <div style="font-size: 10px; color: var(--gray-400)">per year</div>
+          </div>
+        </div>
+        <div class="fee-row" id="feeRow3">
+          <div>
+            <div class="fee-year">3rd Year Students</div>
+            <div class="fee-sub">Continuing</div>
+          </div>
+          <div style="text-align: right">
+            <div class="fee-amount">₹5,000</div>
+            <div style="font-size: 10px; color: var(--gray-400)">per year</div>
+          </div>
+        </div>
+        <div class="fee-row" id="feeRow4">
+          <div>
+            <div class="fee-year">4th Year Students</div>
+            <div class="fee-sub">Continuing</div>
+          </div>
+          <div style="text-align: right">
+            <div class="fee-amount">₹5,000</div>
+            <div style="font-size: 10px; color: var(--gray-400)">per year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-card info-box">
+      <h3>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+        </svg>
+        Application Summary
+      </h3>
+      <div class="summary-row">
+        <span class="summary-key">Name</span
+        ><span class="summary-val" id="sum-name">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-key">Course</span
+        ><span class="summary-val" id="sum-course">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-key">Year</span
+        ><span class="summary-val" id="sum-year">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-key">Session</span
+        ><span class="summary-val" id="sum-session">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-key">Category</span
+        ><span class="summary-val" id="sum-cat">—</span>
+      </div>
+      <div class="summary-total">
+        <div class="tl">Total Fee Payable</div>
+        <div class="tv hidden" id="sum-fee">₹ —</div>
+      </div>
+    </div>
+
+    <!-- Info box -->
+    <div
+      class="info-box"
+      style="
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 18px 20px;
+        box-shadow: var(--shadow-sm);
+      "
+    >
+      <div
+        style="
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--gray-600);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 10px;
+        "
+      >
+        Important Dates
+      </div>
+      <div style="font-size: 0.8rem; color: var(--gray-600); line-height: 2">
+        📅 Admission Open: <strong>May 1, 2025</strong><br />
+        ⏰ Last Date: <strong>July 31, 2025</strong><br />
+        🏠 Move-in Date: <strong>Aug 1, 2025</strong><br />
+        📞 Helpline: <strong>07582-XXXXXX</strong>
+      </div>
+    </div>
+  </div>
+  <!-- /sidebar -->
+</main>
