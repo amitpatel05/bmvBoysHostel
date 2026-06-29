@@ -32,26 +32,24 @@ textarea {
 }
 
 .logo {
-  height: 6rem;
+  height: 4rem;
 }
 
 .hostel-name {
   margin-top: 0.4rem;
-  margin-right: 19rem;
-  line-height: 2rem;
-  display: block;
-  justify-content: center !important;
-  text-align: center;
 }
 
 .name {
-  font-size: xx-large;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 6px !important;
 }
 
 .location,
 .approved {
-  line-height: 0.7rem;
-  font-size: 1.2rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 4px !important;
 }
 
 .nav-up {
@@ -71,28 +69,38 @@ textarea {
 
 .nav-options {
   display: flex;
-  align-items: center;
-  width: 100%;
-  height: 2.5rem;
-  justify-content: space-evenly;
-  box-shadow: 1px 0 2px 0 rgb(0, 0, 0, 0.2);
+  flex-direction: column;
+  height: auto;
+  box-shadow: none;
 }
 
 .nav-options button {
   width: 100%;
-  height: 2.5rem;
-  border: none;
-  color: rgb(0, 0, 0, 0.7);
-  border-right: 1px solid rgb(0, 0, 0, 0.2);
-  background-color: aliceblue;
+  height: 3rem;
+  border-right: none;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  background-color: aliceblue !important;
 }
 
 .nav-options button a {
-  color: rgb(0, 0, 0, 0.7) !important;
+  color: rgb(0, 0, 0, 0.8) !important;
 }
 
 .nav-options button a:hover {
   color: rgb(0, 0, 0, 1) !important;
+}
+
+.nav-options button,
+.nav-options button a,
+.nav-options button .nav-link {
+  color: rgba(0, 0, 0, 0.8) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.nav-options button:hover,
+.nav-options button:hover a,
+.nav-options button:hover .nav-link {
+  color: rgba(0, 0, 0, 1) !important;
 }
 
 .nav-options button .text-danger {
@@ -104,8 +112,8 @@ textarea {
 }
 
 .nav-options button:hover {
-  color: rgb(0, 0, 0, 1);
-  background-color: rgb(203, 219, 234);
+  background-color: rgb(203, 219, 234) !important;
+  color: rgb(0, 0, 0, 1) !important;
 }
 
 .nav-button {
@@ -120,23 +128,36 @@ textarea {
   border-radius: 0.35rem !important;
 }
 
+.dropdown-menu {
+  background-color: aliceblue !important;
+  border: 1px solid rgb(0, 0, 0, 0.1) !important;
+}
+
+.dropdown-item {
+  background-color: aliceblue !important;
+  color: rgb(0, 0, 0, 0.7) !important;
+}
+
+.dropdown-item:hover {
+  background-color: #cddff0 !important;
+  color: rgb(0, 0, 0, 1) !important;
+}
+
 /* FOOTER */
 .footer-main {
-  height: 21rem;
-  background-color: aliceblue;
-  font-size: 1.2rem;
-  color: rgb(0, 0, 0, 0.7);
-  border-top: 1px solid rgb(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  height: auto;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .foot-inside {
-  gap: 10rem;
-  height: 16.5rem;
+  gap: 2rem;
+  height: auto;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .footer-main a {
@@ -201,8 +222,8 @@ textarea {
 
 /* NOTICE CARD */
 .card {
-  width: 40% !important;
-  margin-left: 31.675rem;
+  width: 90% !important;
+  margin: 1rem auto !important;
   opacity: 0.93;
 }
 
@@ -227,4 +248,45 @@ textarea {
 .list-group-item button {
   border: none !important;
   background-color: white !important;
+}
+
+@media (min-width: 992px) {
+  .logo {
+    height: 6rem;
+  }
+
+  .name {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 8px !important;
+  }
+
+  .location,
+  .approved {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 4px !important;
+  }
+
+  .nav-options {
+    flex-direction: row;
+    height: 2.5rem;
+    box-shadow: 1px 0 2px 0 rgb(0, 0, 0, 0.2);
+  }
+
+  .nav-options button {
+    border-bottom: none;
+    border-right: 1px solid rgb(0, 0, 0, 0.2);
+  }
+
+  .foot-inside {
+    flex-direction: row;
+    gap: 10rem;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .card {
+    width: 40% !important;
+  }
 }

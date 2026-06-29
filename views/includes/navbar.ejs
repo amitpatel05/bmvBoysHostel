@@ -1,159 +1,95 @@
-<nav
-  class="navbar navbar-expand-lg border-bottom sticky-top nav display-flex p-0"
->
-  <div class="nav-up">
-    <a onclick="location.href='/home'"
-      ><img class="ms-4 logo" src="/assets/logo.png" alt="logo"
-    /></a>
-    <div class="hostel-name">
-      <p class="name">
-        <b>Bharatratna Mokshagundam Visvesvaraya Boys Hostel, Sagar</b>
-      </p>
-      <p class="location">
-        Near Jabalpur Road, Makronia Station, Sagar, Madhya Pradesh- 470021
-      </p>
-      <p class="approved">
-        <b>(Declared By The Government of Madhya Pradesh)</b>
-      </p>
+<nav class="navbar navbar-expand-lg border-bottom sticky-top p-0 flex-column" style="background-color: aliceblue;">
+  
+  <div class="nav-up d-flex align-items-center justify-content-between w-100 p-2">
+    <div class="d-flex align-items-center text-center text-lg-start flex-column flex-lg-row w-100 justify-content-lg-center">
+      <a onclick="location.href='/home'">
+        <img class="logo" src="/assets/logo.png" alt="logo" />
+      </a>
+      <div class="hostel-name ms-0 ms-lg-3 mt-2 mt-lg-0">
+        <p class="name mb-1">
+          <b>Bharatratna Mokshagundam Visvesvaraya Boys Hostel, Sagar</b>
+        </p>
+        <p class="location mb-0 text-muted">
+          Near Jabalpur Road, Makronia Station, Sagar, Madhya Pradesh- 470021
+        </p>
+        <p class="approved mb-0">
+          <small><b>(Declared By The Government of Madhya Pradesh)</b></small>
+        </p>
+      </div>
     </div>
+    
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </div>
 
-  <div class="nav-down nav-options">
-    <button onclick="location.href='/home'">Home</button>
-    <% if (currUser) { %>
-      <button onclick="location.href='/newAdmission'">Admission</button>
+  <div class="collapse navbar-collapse w-100" id="navbarNav">
+    <div class="nav-down nav-options w-100">
+      <button onclick="location.href='/home'">Home</button>
+      
+      <% if (currUser) { %>
+        <button onclick="location.href='/newAdmission'">Admission</button>
       <% } else { %>
         <button onclick="location.href='/admission'">Registration</button>
       <% } %>
-    <button>
-      <li class="dropdown">
-        <a
-          class="nav-link dropdown-toggle p-0"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-        >
-          &nbsp;&nbsp;Facilities
+      
+      <button class="dropdown">
+        <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown">
+          Facilities
         </a>
-        <ul class="dropdown-menu dropdown-menu-end p-0">
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/facilities"
-              >Details</a
-            >
-          </li>
+        <ul class="dropdown-menu text-center text-lg-start p-0">
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/facilities">Details</a></li>
           <li><hr class="dropdown-divider m-0" /></li>
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="https://videocall-a9i6.onrender.com"
-              >Video Meetings</a
-            >
-          </li>
-          </ul>
-      </li>
-    </button>
-    <button onclick="location.href='/alumni'">Alumni</button>
-    <button onclick="location.href='/eventsGallery'">Events Gallery</button>
-
-    <button>
-      <li class="dropdown">
-        <a
-          class="nav-link dropdown-toggle p-0"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-        >
-          &nbsp;&nbsp;Information
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end p-0">
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/home"
-              >Notices</a
-            >
-          </li>
-          <li><hr class="dropdown-divider m-0" /></li>
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/fee"
-              >Fee Structure</a
-            >
-          </li>
-          <li><hr class="dropdown-divider m-0" /></li>
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/committee"
-              >Mess Committee</a
-            >
-          </li>
-          <li><hr class="dropdown-divider m-0" /></li>
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/rules"
-              >Rules & Regulations</a
-            >
-          </li>
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="https://videocall-a9i6.onrender.com">Video Meetings</a></li>
         </ul>
-      </li>
-    </button>
+      </button>
+      
+      <button onclick="location.href='/alumni'">Alumni</button>
+      <button onclick="location.href='/eventsGallery'">Events Gallery</button>
 
-    <% if (currUser) { %>
-    <button>
-      <li class="dropdown">
-        <a
-          class="nav-link dropdown-toggle p-0"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-        >
-          &nbsp;&nbsp;<%= currUser.username %>
+      <button class="dropdown">
+        <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown">
+          Information
         </a>
-        <ul class="dropdown-menu dropdown-menu-end p-0">
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/profile"
-              >Profile</a
-            >
-          </li>
+        <ul class="dropdown-menu text-center text-lg-start p-0">
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/home">Notices</a></li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/fee">Fee Structure</a></li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/committee">Mess Committee</a></li>
+          <li><hr class="dropdown-divider m-0" /></li>
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/rules">Rules & Regulations</a></li>
+        </ul>
+      </button>
+
+      <% if (currUser) { %>
+      <button class="dropdown">
+        <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown">
+          <%= currUser.username %>
+        </a>
+        <ul class="dropdown-menu text-center text-lg-start p-0">
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/profile">Profile</a></li>
           <li><hr class="dropdown-divider m-0" /></li>
           <li>
-            <a
-              class="dropdown-item text-danger drop-link pt-2 pb-2"
-              href="#"
-              onclick="document.getElementById('logoutForm').submit(); return false;"
-            >
+            <a class="dropdown-item text-danger drop-link pt-2 pb-2" href="#" onclick="document.getElementById('logoutForm').submit(); return false;">
               Logout &nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
-            <form
-              id="logoutForm"
-              action="/logout"
-              method="POST"
-              style="display: none"
-            ></form>
+            <form id="logoutForm" action="/logout" method="POST" style="display: none"></form>
           </li>
         </ul>
-      </li>
-    </button>
-
-    <% } else { %>
-    <button class="nav-button">
-      <li class="dropdown">
-        <a
-          class="nav-link dropdown-toggle p-0"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-        >
-          &nbsp;&nbsp;Account
+      </button>
+      <% } else { %>
+      <button class="dropdown">
+        <a class="nav-link dropdown-toggle p-0" href="#" role="button" data-bs-toggle="dropdown">
+          Account
         </a>
-        <ul class="dropdown-menu dropdown-menu-end p-0">
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/signup"
-              >Sign Up</a
-            >
-          </li>
+        <ul class="dropdown-menu text-center text-lg-start p-0">
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/signup">Sign Up</a></li>
           <li><hr class="dropdown-divider m-0" /></li>
-          <li>
-            <a class="dropdown-item drop-link pt-2 pb-2" href="/login">
-              Login&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i>
-            </a>
-          </li>
+          <li><a class="dropdown-item drop-link pt-2 pb-2" href="/login">Login&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
         </ul>
-      </li>
-    </button>
-    <% } %>
+      </button>
+      <% } %>
+    </div>
   </div>
 </nav>

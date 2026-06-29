@@ -200,3 +200,24 @@
   border: 1px solid #aacdf3;
   box-shadow: 0 0 10px #d0d8e3;
 }
+
+@media (max-width: 768px) {
+  .alumni-box,
+  .info-box2-reverse {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 15px;
+  }
+  .alumni-info {
+    padding: 10px 0;
+  }
+  #map {
+    width: 95%;
+    height: 50vh;
+  }
+  .committee-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

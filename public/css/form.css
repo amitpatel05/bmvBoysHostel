@@ -279,4 +279,16 @@
   .profile-btn {
     justify-content: center;
   }
+  .profile-card {
+    width: 95%;
+    padding: 1.5rem 1rem;
+  }
+  .form-container {
+    width: 95%;
+    padding: 1rem;
+  }
+  .file-button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
