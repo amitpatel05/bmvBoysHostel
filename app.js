@@ -70,6 +70,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// 500ms delay for Render free tier stability
+app.use((req, res, next) => {
+  setTimeout(next, 500);
+});
+
 // ------------------ ROUTES ------------------ //
 
 // Root
